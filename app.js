@@ -13,6 +13,7 @@ const morgan = require('morgan');
 const logger = require('./middlewares/logger');
 const app_config = require('./json/app-config.json');
 const session = require('express-session');
+const passportConfig = require('./db/config/passport');
 const passport = require('passport');
 
 app.use(bodyParser.json());
