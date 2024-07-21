@@ -26,7 +26,7 @@ const localStrategy = new LocalStrategy({
 const googleStrategy = new GoogleStrategy({
   clientID: process.env.CLIENT_ID,
   clientSecret: process.env.CLIENT_SECRET,
-  callbackURL: "https://voosh-tech.vercel.app/google/callback"
+  callbackURL: `${process.env.CORS_URL}/google/callback`
 }, async (accessToken, refreshToken, profile, done) => {
     console.log(profile);
   try {
