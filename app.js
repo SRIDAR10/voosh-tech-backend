@@ -46,8 +46,8 @@ app.use(fileUpload());
 app.use(helmet());
 
 app.use(cors({
-      origin: 'http://localhost:5173',
-      credentials: true, // Allows cookies to be sent
+      origin: process.env.CORS_URL,
+      credentials: true,
     }));
 
 app.options('*',cors());
