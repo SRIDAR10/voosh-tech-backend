@@ -77,7 +77,7 @@ const googleSignupCallback = (req, res) => {
         secure: false, 
         maxAge: 3600000
       });
-      res.redirect('http://localhost:3000/home');
+      res.redirect(process.env.CORS_URL);
     } catch (err) {
       console.error('Error generating token:', err);
       res.status(500).json({ message: 'Failed to generate JWT token' });
