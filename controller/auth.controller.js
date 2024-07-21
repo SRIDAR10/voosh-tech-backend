@@ -85,13 +85,17 @@ const googleSignupCallback = (req, res) => {
   })(req, res);
 };
 
-const logout = (req, res) => {
+const logout = (req, res, next) => {
+  try{
     req.logout(err => {
       if (err) {
         logger.error(err);
         return next(err);
       }
     });
+  } catch(e){
+    console.log(e);
+  }
     res.status(httpStatus.OK).send();
   };
 

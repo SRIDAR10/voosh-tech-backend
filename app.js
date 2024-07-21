@@ -14,7 +14,6 @@ const logger = require('./middlewares/logger');
 const app_config = require('./json/app-config.json');
 const session = require('express-session');
 const passport = require('passport');
-const passportConfig = require('./db/config/passport');
 
 app.use(bodyParser.json());
 app.use(httpContext.middleware);
