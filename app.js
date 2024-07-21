@@ -63,15 +63,8 @@ app.use((req, res, next) => {
       decryptToken(req, res, next);
 });
 
-app.use(session({
-      secret:  process.env.JWT_SECRET,
-      resave: false,
-      saveUninitialized: false,
-      cookie: { secure: true } 
-    }));
     
     app.use(passport.initialize());
-    app.use(passport.session());
 
 
 app.use('/',routes);
